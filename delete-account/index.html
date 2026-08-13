@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete Your Account · Beenetic Studios</title>
+<meta name="description" content="How to delete your Beenetic Studios account and the data attached to it.">
+
+<!--
+  This is the web-accessible deletion route Google Play requires alongside the
+  in-app one. It has to be reachable WITHOUT installing the app, and the same
+  URL goes in the Play Console Data safety form. Do not move it.
+
+  It is deliberately an email route rather than a form: a form would need a
+  backend and would collect more than the email already does.
+-->
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f4f4f6;
+    --text: #16181d;
+    --muted: #5c626e;
+    --accent: #2f7ef0;
+    --border: #e2e4e9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --surface: #1d2026;
+      --text: #eceef2;
+      --muted: #9aa1ae;
+      --accent: #5a9dff;
+      --border: #2a2e36;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: 3rem 1.25rem 4rem;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 42rem; margin: 0 auto; }
+  .back { display: inline-block; margin-bottom: 2rem; color: var(--accent); text-decoration: none; font-size: .9rem; }
+  .back:hover { text-decoration: underline; }
+  h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 .5rem; letter-spacing: -0.01em; }
+  h2 { font-size: 1.15rem; margin: 2.5rem 0 .75rem; }
+  .updated { color: var(--muted); font-size: .9rem; margin: 0 0 2.5rem; }
+  a { color: var(--accent); }
+  ul, ol { padding-left: 1.25rem; }
+  li + li { margin-top: .4rem; }
+  .steps {
+    padding: 1.25rem 1.5rem 1.25rem 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 1rem 0;
+  }
+  .steps li + li { margin-top: .6rem; }
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: .85rem;
+  }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="/">&larr; Legal</a>
+
+  <h1>Delete Your Account</h1>
+  <p class="updated">Applies to all Beenetic Studios games, including Reversi Rivals</p>
+
+  <p>
+    You can delete your account and the data attached to it at any time. There are two routes: from
+    inside the game, which is immediate, or by email, for when you no longer have the device.
+  </p>
+
+  <h2>From inside the game</h2>
+  <ol class="steps">
+    <li>Open the game and go to <strong>Settings</strong>.</li>
+    <li>Tap <strong>Account</strong>.</li>
+    <li>Tap <strong>Delete Account</strong> at the bottom and confirm.</li>
+  </ol>
+  <p>
+    This is immediate and cannot be undone. It is not a sign-out: the account itself is removed, and
+    the game's data on that device is cleared with it. If you keep playing afterwards, the game
+    starts a fresh account.
+  </p>
+
+  <h2>By email</h2>
+  <p>
+    Write to <a href="mailto:support@beeneticstudios.com?subject=Account%20deletion%20request">support@beeneticstudios.com</a>
+    with the subject <strong>Account deletion request</strong>, and tell us:
+  </p>
+  <ul>
+    <li>Which game the account is for.</li>
+    <li>Your display name in that game, and your country if you set one.</li>
+    <li>Your account identifier, if you can still open the game and read it from the Account screen.
+      It is the surest way to match the right account, but it is not required.</li>
+  </ul>
+  <p>
+    We do not hold an email address for you, so we may write back asking for something else that
+    identifies the account. That is to make sure we are deleting the right one, not to delay you.
+    We complete verified requests within 30 days.
+  </p>
+
+  <!--
+    WHEN CLOUD SAVE LANDS: puzzle progress, coins, and unlocked items are planned to move to the
+    backend. Today they are device-only, which is why the list below covers them with "everything
+    the game stored on the device". Once they are server-side they need naming explicitly, and the
+    privacy policy changes in the same pass. See the matching comment in /privacy/.
+  -->
+  <h2>What gets deleted</h2>
+  <ul>
+    <li>Your account and the identifier behind it, including the link to Google Play Games if you
+      made one.</li>
+    <li>Your display name, avatar, status, and country.</li>
+    <li>Your online record and your online match history.</li>
+    <li>Everything the game stored on the device you delete from.</li>
+  </ul>
+
+  <h2>What stays</h2>
+  <ul>
+    <li>Games you already finished against another player remain in that player's own history,
+      because the record is theirs as well. Your name and avatar are removed from those entries,
+      which show a removed player instead.</li>
+    <li>Emails you sent us, until we have finished dealing with them.</li>
+    <li>Data held by Google for advertising, which is governed by Google's own policies rather than
+      ours. See the <a href="/privacy/#advertising">Advertising</a> section of our privacy policy for
+      how to reset your advertising identifier.</li>
+  </ul>
+
+  <p>
+    Full details are in our <a href="/privacy/">Privacy Policy</a>.
+  </p>
+
+  <footer>
+    &copy; 2026 Beenetic Studios ·
+    <a href="https://www.beeneticstudios.com/">beeneticstudios.com</a>
+  </footer>
+</main>
+</body>
+</html>

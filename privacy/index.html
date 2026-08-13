@@ -4,13 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy · Beenetic Studios</title>
-<meta name="description" content="Privacy policy for Beenetic Studios products.">
+<meta name="description" content="Privacy policy for Beenetic Studios games and websites.">
 
 <!--
-  PLACEHOLDER. Remove this noindex line when the real policy goes up, so the page
-  can be found. While it says "in preparation" you do not want it cached anywhere.
+  This URL is referenced by the Google Play and App Store listings and by the
+  in-app Settings screen. Do not move it.
+
+  GDPR names a "controller" and some reviewers look for a legal identity rather
+  than a trade name. Beenetic Studios is a sole proprietorship, so if that ever
+  needs to be explicit, add the legal name to the Contact section. A postal
+  address is deliberately not published here.
 -->
-<meta name="robots" content="noindex">
 
 <style>
   :root {
@@ -45,7 +49,11 @@
   .back:hover { text-decoration: underline; }
   h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 .5rem; letter-spacing: -0.01em; }
   h2 { font-size: 1.15rem; margin: 2.5rem 0 .75rem; }
+  h3 { font-size: 1rem; margin: 1.75rem 0 .5rem; }
   .updated { color: var(--muted); font-size: .9rem; margin: 0 0 2.5rem; }
+  a { color: var(--accent); }
+  ul { padding-left: 1.25rem; }
+  li + li { margin-top: .4rem; }
   .notice {
     padding: 1.25rem 1.5rem;
     background: var(--surface);
@@ -54,6 +62,10 @@
   }
   .notice p { margin: 0; }
   .notice p + p { margin-top: .75rem; }
+  .table-wrap { overflow-x: auto; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; }
   footer {
     margin-top: 3.5rem;
     padding-top: 1.5rem;
@@ -69,42 +81,252 @@
   <a class="back" href="/">&larr; Legal</a>
 
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: not yet published</p>
+  <p class="updated">Last updated: 12 August 2026</p>
 
-  <div class="notice">
-    <p>This policy is in preparation and is not yet in effect.</p>
-    <p>
-      It will be published here before Beenetic Studios apps are released, and this
-      address will not change.
-    </p>
-  </div>
+  <p>
+    Beenetic Studios makes games for mobile devices. This policy explains what information those
+    games and this website collect, why, who else sees it, and how you can have it deleted. It
+    applies to every Beenetic Studios app and site. Where a particular app does something specific,
+    that is called out by name.
+  </p>
+
+  <p>
+    The short version: we collect the little we need to run online play and to show ads, we do not
+    sell your information, and you can delete your account and its data at any time.
+  </p>
+
+  <h2>What we collect</h2>
+
+  <h3>Information you give us</h3>
+  <ul>
+    <li>A display name, an avatar, an optional one-line status, and an optional country, which you
+      choose in the app. Other players you are matched with can see these.</li>
+    <li>Anything you write to us, if you send us an email.</li>
+  </ul>
+
+  <h3>Information created by playing</h3>
+  <ul>
+    <li>Your account identifier. When you first play, the app creates an anonymous identifier for
+      your device. If you choose to sign in with Google Play Games, your Play Games player
+      identifier is linked to that account so your progress survives a new device.</li>
+    <li>Your online match record (wins, losses, draws) and the state of games you are currently
+      playing online: the moves made, whose turn it is, and when each move happened.</li>
+    <li>Your in-app preferences, such as the theme, board and piece styles you have selected, and
+      the date your account was created.</li>
+  </ul>
 
   <!--
-    ============================================================================
-    WHEN YOU WRITE THE REAL POLICY
+    WHEN CLOUD SAVE LANDS: puzzle progress, coins, and unlocked items are planned to move to the
+    backend. On the day that ships, four things change together or the policy becomes false:
 
-    Replace the .notice block above with the sections below, set the "Last
-    updated" date, and delete the noindex meta tag in the head.
+      1. This paragraph. Those items move up into "Information created by playing".
+      2. The "Who we share it with" table row for brainCloud, which lists what it receives.
+      3. /delete-account/, whose "What gets deleted" list is written against local-only storage.
+      4. The Play Console Data safety form, which must keep matching this page.
 
-    Keep this URL forever. Both store listings point at it, and changing it
-    means editing both.
-
-    Sections the Google Play and App Store reviews expect to find:
-
-      <h2>What we collect</h2>
-      <h2>How we use it</h2>
-      <h2>Who we share it with</h2>       (name the backend and any SDKs)
-      <h2>How long we keep it</h2>
-      <h2>Your choices and rights</h2>    (access, deletion, how to ask)
-      <h2>Children</h2>                   (state the age policy plainly)
-      <h2>Changes to this policy</h2>
-      <h2>Contact</h2>                    (a real address someone reads)
-
-    Two that trip people up: the deletion route has to be a real, working
-    request path, and the children's section has to match the age rating you
-    actually claim in each store listing.
-    ============================================================================
+    Nothing else in this policy depends on where that data lives.
   -->
+  <p>
+    Progress that does not need the network stays on your device. Puzzle progress, single-player
+    history, coins and unlocked items, sound and display settings, and saved game analysis are
+    stored locally and are removed when you uninstall the app.
+  </p>
+
+  <h3>Information collected automatically for advertising</h3>
+  <p>
+    Our games are free and are supported by ads. To serve them, Google receives your device's
+    advertising identifier, your approximate location derived from your IP address, and information
+    about how you interacted with an ad. See <a href="#advertising">Advertising</a> below.
+  </p>
+
+  <h3>What we do not collect</h3>
+  <ul>
+    <li>We do not ask for your email address, phone number, date of birth, or real name.</li>
+    <li>We do not use a precise location, your contacts, your photos, your microphone, or your
+      camera.</li>
+    <li>We do not add a third-party analytics or tracking SDK to our games. Google Play and Apple
+      give us aggregated crash and performance reports for our own apps as part of distributing
+      them, which we use to fix bugs.</li>
+    <li>Our games contain no purchases, so we never see payment information.</li>
+  </ul>
+
+  <h2>How we use it</h2>
+  <ul>
+    <li>To run online play: pairing you with an opponent, carrying moves between you, and settling
+      the result.</li>
+    <li>To keep your account and your progress attached to you across sessions and devices.</li>
+    <li>To show your name, avatar, status, country, and record to opponents in a match.</li>
+    <li>To show ads, and to count how often ads were offered and watched.</li>
+    <li>To answer your support messages and to investigate cheating, abuse, or technical faults.</li>
+  </ul>
+  <p>
+    We do not build advertising or marketing profiles ourselves, and we do not sell or rent personal
+    information to anyone.
+  </p>
+
+  <h2 id="advertising">Advertising</h2>
+  <p>
+    We use <strong>Google AdMob</strong> as our only advertising provider. Ads are optional rewarded
+    videos that you choose to watch in exchange for an in-game reward. Google may use your device's
+    advertising identifier and related information to select ads, to measure them, and to limit how
+    often you see the same one. Google's handling of that data is described in
+    <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses
+    information from sites or apps that use our services</a>.
+  </p>
+  <p>
+    Where the law requires it, including the European Economic Area and the United Kingdom, the app
+    shows a consent form before any personalized advertising data is used, and remembers your
+    answer. You can change that answer at any time from the privacy option in the app's settings. On
+    iOS, the system also asks separately whether apps may track you across other companies' apps and
+    websites, and declining that is respected regardless of anything else.
+  </p>
+  <p>
+    You can limit ad personalization outside our apps too. On Android, use Settings, then Privacy,
+    then Ads, where you can reset or delete your advertising identifier. On iOS, use Settings, then
+    Privacy and Security, then Tracking.
+  </p>
+  <p>
+    Declining personalized ads does not remove ads and does not restrict anything in the game. You
+    will simply see less relevant ones.
+  </p>
+
+  <h2>Who we share it with</h2>
+  <p>
+    We share information only with the service providers that make the games work, and only for that
+    purpose.
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Provider</th><th>What it receives</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>bitHeads Inc. (brainCloud)</td>
+          <td>Your account identifier, profile fields, online record, and online match state</td>
+          <td>It is the backend that stores accounts and runs online play</td>
+        </tr>
+        <tr>
+          <td>Google (AdMob)</td>
+          <td>Advertising identifier, IP address, ad interaction data</td>
+          <td>To select, deliver, and measure ads</td>
+        </tr>
+        <tr>
+          <td>Google (Play Games Services)</td>
+          <td>Your Play Games player identifier, if you sign in</td>
+          <td>To let your account follow you to a new device</td>
+        </tr>
+        <tr>
+          <td>Google Play and the Apple App Store</td>
+          <td>Distribution and crash reporting data they collect themselves</td>
+          <td>To distribute the app and report faults</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Other players see only what a match needs: your display name, avatar, status, country, and
+    record. They never see your identifiers or anything else.
+  </p>
+  <p>
+    We may also disclose information if the law requires it, or to protect our rights or the safety
+    of our players. If Beenetic Studios is ever sold or transferred, information may move with it,
+    and this policy travels with the information.
+  </p>
+  <p>
+    These providers operate internationally, so your information may be processed in Canada, the
+    United States, or other countries where they run infrastructure. Where transfers out of the
+    European Economic Area or the United Kingdom are involved, our providers rely on the safeguards
+    described in their own terms, such as the European Commission's standard contractual clauses.
+  </p>
+
+  <h2>How long we keep it</h2>
+  <ul>
+    <li><strong>Account and profile data:</strong> for as long as your account exists.</li>
+    <li><strong>Online matches:</strong> while the match is active, and afterwards as a completed
+      record for both players.</li>
+    <li><strong>Support email:</strong> for as long as it takes to resolve your question, and then
+      for a reasonable period afterwards in case you write again.</li>
+    <li><strong>Advertising data:</strong> retained by Google under its own retention rules, not
+      ours.</li>
+  </ul>
+  <p>
+    An account that never signs in with Google Play Games exists only for the device that created
+    it. Uninstalling the app removes that device's copy of the identifier, which means the account
+    can no longer be reached, but it does not by itself delete the account. Use one of the routes
+    below if you want it gone.
+  </p>
+
+  <h2>Deleting your account and your data</h2>
+  <p>
+    You can delete your account from inside the app, under Settings, then Account, then Delete
+    Account. This deletes the account and its stored data from our backend and clears the game's
+    local data on that device. It is not a sign-out and it cannot be undone.
+  </p>
+  <p>
+    If you cannot reach the in-app option, for example because you no longer have the device, you
+    can ask us instead. See <a href="/delete-account/">Delete your account</a> for the request
+    route, or write to
+    <a href="mailto:support@beeneticstudios.com">support@beeneticstudios.com</a>. We complete
+    verified deletion requests within 30 days.
+  </p>
+  <p>
+    One thing deletion cannot reach: games you already finished against another player remain in
+    that player's own match history, because it is their record too. Your name and avatar are
+    removed from those entries, which show a removed player instead.
+  </p>
+
+  <h2>Your choices and rights</h2>
+  <p>
+    You can change your display name, avatar, status, and country at any time in the app, decline or
+    withdraw advertising consent where it is offered, and delete your account as described above.
+  </p>
+  <p>
+    Depending on where you live, you may also have the right to ask what personal information we
+    hold about you, to have it corrected, to have it deleted, to receive a copy of it, and to object
+    to or restrict certain uses. In the European Economic Area and the United Kingdom, our legal
+    bases are performance of a contract (running the game and your account), consent (personalized
+    advertising), and our legitimate interests (keeping the game working and free of abuse). In
+    California, we do not sell or share personal information as those terms are defined by state
+    law, and we will not discriminate against you for exercising any right.
+  </p>
+  <p>
+    To exercise any of these, write to
+    <a href="mailto:support@beeneticstudios.com">support@beeneticstudios.com</a>. Because we do not
+    hold an email address or a real name for you, we may need something from inside the app, such as
+    your display name and account identifier, to be confident we are acting on the right account. If
+    you are in the European Economic Area or the United Kingdom and you are not satisfied with our
+    answer, you may complain to your local data protection authority.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    Our games are not directed to children. They are intended for players aged 13 and over, and we
+    do not knowingly collect personal information from children under 13, or under the equivalent
+    age of consent where you live. If you believe a child has provided us with information, write to
+    <a href="mailto:support@beeneticstudios.com">support@beeneticstudios.com</a> and we will delete
+    the account.
+  </p>
+
+  <h2>Security</h2>
+  <p>
+    Traffic between the app and our backend is encrypted in transit, and account data is held by our
+    backend provider under its own security controls. No system is perfect, but we keep the amount
+    of information we hold small on purpose, which is the most reliable protection we can offer you.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If we change this policy, we will update the date at the top of this page. If a change
+    materially affects what we collect or who receives it, we will say so in the app before the
+    change takes effect. This address will not change.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Beenetic Studios<br>
+    <a href="mailto:support@beeneticstudios.com">support@beeneticstudios.com</a>
+  </p>
 
   <footer>
     &copy; 2026 Beenetic Studios ·
