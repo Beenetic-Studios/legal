@@ -85,13 +85,15 @@
   <h2>From inside the game</h2>
   <ol class="steps">
     <li>Open the game and go to <strong>Settings</strong>.</li>
-    <li>Tap <strong>Account</strong>.</li>
-    <li>Tap <strong>Delete Account</strong> at the bottom and confirm.</li>
+    <li>Under <strong>Account</strong>, tap <strong>Delete Account</strong>.</li>
+    <li>Type <strong>DELETE</strong> and tap <strong>Delete Account</strong> to confirm.</li>
   </ol>
   <p>
-    This is immediate and cannot be undone. It is not a sign-out: the account itself is removed, and
-    the game's data on that device is cleared with it. If you keep playing afterwards, the game
-    starts a fresh account.
+    You need to be online. This is immediate and cannot be undone. It is not a sign-out: the account
+    itself is removed, and the game's data on that device is cleared with it (apart from its
+    diagnostic log files, which are replaced as you keep playing). Online games you are
+    still playing end as resignations, and invitations you sent or received are withdrawn. If you
+    keep playing afterwards, the game starts a fresh account.
   </p>
 
   <h2>By email</h2>
@@ -102,8 +104,9 @@
   <ul>
     <li>Which game the account is for.</li>
     <li>Your display name in that game, and your country if you set one.</li>
-    <li>Your account identifier, if you can still open the game and read it from the Account screen.
-      It is the surest way to match the right account, but it is not required.</li>
+    <li>Your account identifier, if you can still open the game: it is the Player ID under
+      Settings, then About Reversi Rivals. It is the surest way to match the right account, but it is not
+      required.</li>
   </ul>
   <p>
     We do not hold an email address for you, so we may write back asking for something else that
@@ -112,26 +115,44 @@
   </p>
 
   <!--
-    WHEN CLOUD SAVE LANDS: puzzle progress, coins, and unlocked items are planned to move to the
-    backend. Today they are device-only, which is why the list below covers them with "everything
-    the game stored on the device". Once they are server-side they need naming explicitly, and the
-    privacy policy changes in the same pass. See the matching comment in /privacy/.
+    Server authority shipped 2026-10-06, so progress, coins, owned items and game history are named
+    below rather than covered by "stored on the device". Keep this list in step with /privacy/.
+    Both routes run the same server routine (ReversiRivals docs/plan-account-deletion.md, DL-124:
+    RR_DeleteAccount in the app, RR_AdminDeleteAccount for email requests), which also removes the
+    unowned rrPlayer row a brainCloud user delete leaves behind. Published 2026-10-12 ahead of the
+    first store build (only internal testers have had a build, DL-130).
   -->
   <h2>What gets deleted</h2>
   <ul>
     <li>Your account and the identifier behind it, including the link to Google Play Games if you
       made one.</li>
-    <li>Your display name, avatar, status, and country.</li>
-    <li>Your online record and your online match history.</li>
-    <li>Everything the game stored on the device you delete from.</li>
+    <li>Your display name, avatar, status, country, and invite code.</li>
+    <li>Your progress, coins and owned items, your game history and statistics, and your
+      notification token and notification record.</li>
+    <li>Your online record, and the online games you started.</li>
+    <li>The game's data on the device you delete from, apart from its diagnostic log files.</li>
   </ul>
 
+  <!-- Q-039 / D5 and D7 (2026-10-10): no scrub; the 30-day ended-game record. Keep in step with
+       /privacy/ ("What deletion cannot reach"), which names the code behind each item. -->
   <h2>What stays</h2>
   <ul>
-    <li>Games you already finished against another player remain in that player's own history,
-      because the record is theirs as well. Your name and avatar are removed from those entries,
-      which show a removed player instead.</li>
-    <li>Emails you sent us, until we have finished dealing with them.</li>
+    <li>Games you already played against another player remain in that player's own records,
+      because they are theirs as well: their match history keeps the display name and avatar you
+      had when the game was played, and games they started stay until they expire on our
+      backend.</li>
+    <li>For a short while, your display name and account identifier in your opponents' own
+      notification and daily game-count records, until those clear.</li>
+    <li>For 30 days, a short record of each online game you started that ended recently, so your
+      opponent's game can still record the result. Only that game's players can read it. It holds
+      the moves, the result, and the profile details a match shows (display name, avatar, country
+      and status), and is then deleted automatically.</li>
+    <li>On the device, the game's diagnostic log files, until they are replaced as you keep playing
+      or you uninstall the game.</li>
+    <li>Crash reports, which are not linked to your account and which Firebase deletes after 90
+      days.</li>
+    <li>Emails you sent us, including any Report a Problem files, until we have finished dealing
+      with them.</li>
     <li>Data held by Google for advertising, which is governed by Google's own policies rather than
       ours. See the <a href="/privacy/#advertising">Advertising</a> section of our privacy policy for
       how to reset your advertising identifier.</li>

@@ -81,7 +81,11 @@
   <a class="back" href="/">&larr; Legal</a>
 
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 12 August 2026</p>
+  <!-- Set this to the publish date. The published version (c372392) promises an in-app notice
+       before a material change takes effect. This revision is material, but Braden ruled no notice
+       is needed for it (ReversiRivals DL-130): only internal testers have ever had a build. -->
+  <!-- Ship gates for this text: ReversiRivals docs/store-data-safety.md, "Ship gates". -->
+  <p class="updated">Last updated: 12 October 2026</p>
 
   <p>
     Beenetic Studios makes games for mobile devices. This policy explains what information those
@@ -91,16 +95,18 @@
   </p>
 
   <p>
-    The short version: we collect the little we need to run online play and to show ads, we do not
-    sell your information, and you can delete your account and its data at any time.
+    The short version: we collect the little we need to run online play, keep your progress, tell
+    you when a game is waiting, fix crashes, and show ads. We do not sell your information, and you
+    can delete your account and its data at any time.
   </p>
 
   <h2>What we collect</h2>
 
   <h3>Information you give us</h3>
   <ul>
-    <li>A display name, an avatar, an optional one-line status, and an optional country, which you
-      choose in the app. Other players you are matched with can see these.</li>
+    <li>A display name, an avatar, an optional one-line status, and a country, which you choose in
+      the app. The country starts out pre-selected from your device's settings, and you can change
+      it. Other players you are matched with can see these.</li>
     <li>Anything you write to us, if you send us an email.</li>
   </ul>
 
@@ -111,32 +117,49 @@
       identifier is linked to that account so your progress survives a new device.</li>
     <li>Your online match record (wins, losses, draws) and the state of games you are currently
       playing online: the moves made, whose turn it is, and when each move happened.</li>
+    <li>Your progress, kept with your account so it follows you to a new device: your coin balance
+      and a record of recent coin earnings and purchases (including when you claimed a reward by
+      watching an ad), the items you own, puzzle and lesson progress, your daily puzzle streak, and
+      which computer opponents you have beaten.</li>
+    <li>A history of your finished games, including games against the computer: the result, the
+      moves of recent games, and, for online games, your opponent's name, avatar and account
+      identifier. Also your win, loss and draw totals against the computer.</li>
+    <li>Your invite code, which other players can enter to start a game with you.</li>
+    <li>For online games, a count of how many games you have finished against each opponent each
+      day, which we use to detect abuse of rewards.</li>
     <li>Your in-app preferences, such as the theme, board and piece styles you have selected, and
       the date your account was created.</li>
   </ul>
 
   <!--
-    WHEN CLOUD SAVE LANDS: puzzle progress, coins, and unlocked items are planned to move to the
-    backend. On the day that ships, four things change together or the policy becomes false:
-
-      1. This paragraph. Those items move up into "Information created by playing".
-      2. The "Who we share it with" table row for brainCloud, which lists what it receives.
-      3. /delete-account/, whose "What gets deleted" list is written against local-only storage.
-      4. The Play Console Data safety form, which must keep matching this page.
-
-    Nothing else in this policy depends on where that data lives.
+    Server authority shipped 2026-10-06: coins, owned items, progression and game history now live
+    with the account, which is why they are listed above. If anything moves between the device and
+    the backend again, four things change together or the policy becomes false: the two lists
+    here, the brainCloud row in "Who we share it with", /delete-account/'s "What gets deleted", and
+    the Play Console Data safety form (draft answers: ReversiRivals docs/store-data-safety.md).
   -->
   <p>
-    Progress that does not need the network stays on your device. Puzzle progress, single-player
-    history, coins and unlocked items, sound and display settings, and saved game analysis are
-    stored locally and are removed when you uninstall the app.
+    A few things stay on your device and are never sent to us: sound, animation and board display
+    settings, and saved game analysis. They are removed when you uninstall the app.
   </p>
+
+  <h3>Information your device sends automatically</h3>
+  <ul>
+    <li>Your device's language and time zone, a country code (from your SIM card or mobile network
+      where available, otherwise your device's region setting), and the app's version, which are
+      sent when you sign in. We use the time zone to work out your local day for daily rewards and
+      streaks, and to keep notifications out of night-time hours.</li>
+    <li>If notifications are on, a notification token for your device. See
+      <a href="#notifications">Notifications</a> below.</li>
+    <li>On Android, unless you turn them off, crash and error reports. See
+      <a href="#crash-reports">Crash reports</a> below.</li>
+  </ul>
 
   <h3>Information collected automatically for advertising</h3>
   <p>
     Our games are free and are supported by ads. To serve them, Google receives your device's
-    advertising identifier, your approximate location derived from your IP address, and information
-    about how you interacted with an ad. See <a href="#advertising">Advertising</a> below.
+    advertising identifier, your approximate location derived from your IP address, basic
+    information about your device, and information about how you interacted with an ad. See <a href="#advertising">Advertising</a> below.
   </p>
 
   <h3>What we do not collect</h3>
@@ -144,7 +167,10 @@
     <li>We do not ask for your email address, phone number, date of birth, or real name.</li>
     <li>We do not use a precise location, your contacts, your photos, your microphone, or your
       camera.</li>
-    <li>We do not add a third-party analytics or tracking SDK to our games. Google Play and Apple
+    <li>We do not use a third-party analytics or tracking SDK in our games. We do use Google's
+      Firebase Crashlytics for crash reports, described below. The Firebase libraries we use for
+      notifications and crash reports bring Google's analytics component with them; we switch its
+      data collection off and never call it. Google Play and Apple
       give us aggregated crash and performance reports for our own apps as part of distributing
       them, which we use to fix bugs.</li>
     <li>Our games contain no purchases, so we never see payment information.</li>
@@ -154,9 +180,12 @@
   <ul>
     <li>To run online play: pairing you with an opponent, carrying moves between you, and settling
       the result.</li>
-    <li>To keep your account and your progress attached to you across sessions and devices.</li>
+    <li>To keep your account and your progress attached to you across sessions and devices, and to
+      award coins and items fairly.</li>
+    <li>To tell you, with one short notification, when an online game is waiting for you.</li>
     <li>To show your name, avatar, status, country, and record to opponents in a match.</li>
-    <li>To show ads, and to count how often ads were offered and watched.</li>
+    <li>To show ads, and to record when you claim an ad reward so that it is paid once.</li>
+    <li>To find and fix crashes and errors.</li>
     <li>To answer your support messages and to investigate cheating, abuse, or technical faults.</li>
   </ul>
   <p>
@@ -167,7 +196,7 @@
   <h2 id="advertising">Advertising</h2>
   <p>
     We use <strong>Google AdMob</strong> as our only advertising provider. Ads are optional rewarded
-    videos that you choose to watch in exchange for an in-game reward. Google may use your device's
+    ads that you choose to watch in exchange for an in-game reward. Google may use your device's
     advertising identifier and related information to select ads, to measure them, and to limit how
     often you see the same one. Google's handling of that data is described in
     <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses
@@ -176,18 +205,71 @@
   <p>
     Where the law requires it, including the European Economic Area and the United Kingdom, the app
     shows a consent form before any personalized advertising data is used, and remembers your
-    answer. You can change that answer at any time from the privacy option in the app's settings. On
-    iOS, the system also asks separately whether apps may track you across other companies' apps and
-    websites, and declining that is respected regardless of anything else.
+    answer. Wherever that form applies, you can change your answer at any time from Ad Privacy
+    Options in the app's settings.
+    <!-- iOS: not built yet. App Tracking Transparency (NSUserTrackingUsageDescription and the
+         prompt) must exist in the first iOS build, or this sentence is false for it. -->
+    On iOS, the system also asks separately whether apps may track you across other companies' apps
+    and websites, and declining that is respected regardless of anything else.
   </p>
   <p>
     You can limit ad personalization outside our apps too. On Android, use Settings, then Privacy,
-    then Ads, where you can reset or delete your advertising identifier. On iOS, use Settings, then
-    Privacy and Security, then Tracking.
+    then Ads, where you can reset or delete your advertising identifier and manage other ad privacy
+    settings. On iOS, use Settings, then Privacy and Security, then Tracking.
   </p>
   <p>
     Declining personalized ads does not remove ads and does not restrict anything in the game. You
-    will simply see less relevant ones.
+    will see less relevant ones, and Google still receives the information described above to
+    deliver and measure them.
+  </p>
+
+  <h2 id="notifications">Notifications</h2>
+  <p>
+    <strong>Reversi Rivals</strong> can notify you when an online game needs you: an opponent has
+    moved, someone has invited you to a game, or a game has ended. We keep these few on purpose: at
+    most one summary while you are away from the app, at most three in a day, and none between 22:00
+    and 08:00 your local time, as worked out from the time zone your device last reported.
+  </p>
+  <!-- Doorbell: doorbell.js (caps, quiet hours, payload), notify.js (the record: seenAt, sentAt,
+       results[{m,o,at,n,k}], newest 10). Turning push off deletes the FCM token on the device and
+       deregisters it on the server when online (PushNotifications.cs). -->
+  <p>
+    To address a notification to your device, the app gets a notification token from
+    <strong>Google Firebase Cloud Messaging</strong> and stores it with your account on our backend.
+    Our backend also keeps a short record of what is waiting for you (up to ten recently finished
+    games, each with the opponent's name and account identifier), when you were last in the app,
+    and when it last notified you. The list of finished games is cleared once you have been notified
+    about them or have seen them. The notification itself carries a short message, such as an
+    opponent's display name and that it is your move, plus identifiers the app uses to open the
+    right game, and is delivered by Google.
+  </p>
+  <p>
+    You can turn notifications off at any time in the app, under Settings, then Online, then Push
+    Notifications, or in your device's notification settings. Turning them off in the app deletes
+    the notification token, so nothing more can be sent to that device, and removes it from your
+    account.
+  </p>
+
+  <h2 id="crash-reports">Crash reports</h2>
+  <!-- Crashlytics (DL-126 to DL-128, ReversiRivals docs/plan-crash-reporting.md). Android only.
+       "We remove account identifiers, invite codes and names" relies on LogRedactor (DL-130 widened
+       it to status and country). Never log a name in an Info+ line outside JSON. The opt-out
+       survives account deletion and the epoch wipe (DL-130). -->
+  <p>
+    On Android, when <strong>Reversi Rivals</strong> crashes or hits an error, it sends a crash report
+    to <strong>Google Firebase Crashlytics</strong>: what went wrong and where in the code, which
+    screen was open, recent app log lines, your device model, operating system and app version, and
+    a random installation identifier. We remove account identifiers, invite codes and names from
+    those log lines before they leave your device. Reports are not linked to your account, and
+    Firebase deletes them after 90 days. Crash reports are on unless you turn them off, under
+    Settings, then Privacy, then Send Crash Reports.
+  </p>
+  <p>
+    If you choose Report a Problem in Settings, the app prepares a file and your device shares it
+    with us through the app you pick, usually email. The file holds your device model, operating
+    system, app version and account identifier, and the app's recent log, which can include your
+    display name and the names and identifiers of players you have played. We use it only to look
+    into the problem you reported.
   </p>
 
   <h2>Who we share it with</h2>
@@ -203,12 +285,29 @@
       <tbody>
         <tr>
           <td>bitHeads Inc. (brainCloud)</td>
-          <td>Your account identifier, profile fields, online record, and online match state</td>
-          <td>It is the backend that stores accounts and runs online play</td>
+          <td>Your account identifier, profile fields, invite code, progress, coins and owned items,
+            game history, statistics, online match state, device language, country code and time
+            zone, and your notification token</td>
+          <td>It is the backend that stores accounts, keeps progress, runs online play and sends
+            notifications</td>
+        </tr>
+        <tr>
+          <td>Google (Firebase Cloud Messaging)</td>
+          <td>Your notification token, a Firebase installation identifier, and the text of each
+            notification, if notifications are on</td>
+          <td>To deliver notifications to your device</td>
+        </tr>
+        <tr>
+          <td>Google (Firebase Crashlytics)</td>
+          <td>Crash and error reports: what went wrong, which screen was open, recent log lines with
+            identifiers and names removed, device model, operating system, app version, and an
+            installation identifier, if crash reports are on</td>
+          <td>To find and fix crashes</td>
         </tr>
         <tr>
           <td>Google (AdMob)</td>
-          <td>Advertising identifier, IP address, ad interaction data</td>
+          <td>Advertising identifier, IP address, basic device information, ad interaction
+            data</td>
           <td>To select, deliver, and measure ads</td>
         </tr>
         <tr>
@@ -224,9 +323,13 @@
       </tbody>
     </table>
   </div>
+  <!-- ReversiRivals DL-129 (deployed and verified 2026-10-12): client GetListByIndexedId and
+       FindPlayers are blocked, so other players' reads go through Cloud Code. -->
   <p>
-    Other players see only what a match needs: your display name, avatar, status, country, and
-    record. They never see your identifiers or anything else.
+    Other players see what a match needs: your display name, avatar, status, country, online
+    record, and invite code. Their copy of the game also receives your account identifier and the
+    board and piece styles you have chosen, which it uses to run the match but does not show. Nobody
+    else can read your coins, progress, or history.
   </p>
   <p>
     We may also disclose information if the law requires it, or to protect our rights or the safety
@@ -244,9 +347,15 @@
   <ul>
     <li><strong>Account and profile data:</strong> for as long as your account exists.</li>
     <li><strong>Online matches:</strong> while the match is active, and afterwards as a completed
-      record for both players.</li>
-    <li><strong>Support email:</strong> for as long as it takes to resolve your question, and then
-      for a reasonable period afterwards in case you write again.</li>
+      record for both players. If you delete your account, a short record of each online game you
+      started that ended recently is kept for 30 days so your opponent's game can record the
+      result (see "Deleting your account and your data").</li>
+    <li><strong>Notification records:</strong> the token for as long as notifications are on; the
+      list of finished games only until you have been notified about them or have seen them.</li>
+    <li><strong>Crash reports:</strong> 90 days, after which Firebase deletes them.</li>
+    <li><strong>Support email, including Report a Problem files:</strong> for as long as it takes to
+      resolve your question, and then for a reasonable period afterwards in case you write
+      again.</li>
     <li><strong>Advertising data:</strong> retained by Google under its own retention rules, not
       ours.</li>
   </ul>
@@ -258,10 +367,19 @@
   </p>
 
   <h2>Deleting your account and your data</h2>
+  <!--
+    Matches ReversiRivals docs/plan-account-deletion.md (built 2026-10-10 on feature/account-deletion,
+    DL-124): RR_DeleteAccount ends live games as resignations (D2), declines invitations, writes the
+    30-day ended-game records (D7), cancels the notification job, deregisters the token, deletes the
+    rrPlayer row and then the brainCloud user. Do not publish before that build ships to the store.
+  -->
   <p>
-    You can delete your account from inside the app, under Settings, then Account, then Delete
-    Account. This deletes the account and its stored data from our backend and clears the game's
-    local data on that device. It is not a sign-out and it cannot be undone.
+    You can delete your account from inside the app: open Settings and, under Account, tap Delete
+    Account, then type DELETE to confirm. You need to be online. This deletes the account and its
+    stored data from our backend and clears the game's data on that device, apart from its
+    diagnostic log files, which are replaced as you keep playing and removed when you uninstall. It
+    is not a sign-out and it cannot be undone. Online games you are still playing end as
+    resignations, and invitations you sent or received are withdrawn.
   </p>
   <p>
     If you cannot reach the in-app option, for example because you no longer have the device, you
@@ -270,16 +388,39 @@
     <a href="mailto:support@beeneticstudios.com">support@beeneticstudios.com</a>. We complete
     verified deletion requests within 30 days.
   </p>
+  <!--
+    Q-039 / D5 (Braden, 2026-10-10): no scrub in v1.0; the opponent's own history keeps the name and
+    avatar it copied at the time (StoredGame.TopName, OpponentAvatar), and this paragraph says so.
+    The second paragraph is D7's rrEnded record (30-day TTL, ACCOUNT_ENDED_TTL_MS).
+  -->
+  <!-- What survives, from code (2026-10-12 review): the opponent's history blob; matches the
+       opponent owns (completed, left to brainCloud's own expiry); the opponent's rrPlayer
+       notify.results (o, n; newest 10) and wallet.pairs key (that day only); rrEnded records
+       (account-delete.js, whole players[] and matchState; read only through RR_ReadEndedRecord,
+       which serves it only to a player listed in its players[], DL-129). -->
   <p>
-    One thing deletion cannot reach: games you already finished against another player remain in
-    that player's own match history, because it is their record too. Your name and avatar are
-    removed from those entries, which show a removed player instead.
+    What deletion cannot reach: games you already played against another player remain in that
+    player's own records, because they are theirs too. That includes their match history, which
+    keeps the display name and avatar you had when the game was played, and, for games they
+    started, the game itself until it expires on our backend. Their own short-lived records can
+    also hold your display name and account identifier for a while: the list of finished games
+    waiting in their notifications (cleared once they are notified or catch up), and that day's
+    count of games played against each opponent.
+  </p>
+  <p>
+    So that your opponents' games still record their result, deleting your account keeps a short
+    record of each online game you started that ended in the last 30 days, including any your
+    deletion ended. It holds the game's moves and result and the profile details a match shows
+    (display name, avatar, country and status), is used only so your opponent's game can record the
+    result, can be read only by that game's players, and is deleted automatically 30 days after
+    your account is.
   </p>
 
   <h2>Your choices and rights</h2>
   <p>
-    You can change your display name, avatar, status, and country at any time in the app, decline or
-    withdraw advertising consent where it is offered, and delete your account as described above.
+    You can change your display name, avatar, status, and country at any time in the app, turn
+    notifications and crash reports off, decline or withdraw advertising consent where it is
+    offered, and delete your account as described above.
   </p>
   <p>
     Depending on where you live, you may also have the right to ask what personal information we
