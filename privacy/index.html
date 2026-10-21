@@ -82,10 +82,16 @@
 
   <h1>Privacy Policy</h1>
   <!-- Set this to the publish date. The published version (c372392) promises an in-app notice
-       before a material change takes effect. This revision is material, but Braden ruled no notice
-       is needed for it (ReversiRivals DL-130): only internal testers have ever had a build. -->
+       before a material change takes effect. The 2026-10-12 revision was material, but Braden ruled
+       no notice is needed for it (ReversiRivals DL-130): only internal testers have ever had a build.
+       The 2026-10-21 revision (Names, statuses and reports) adds reports; no build carrying Report
+       Player has left Braden's own devices, and Braden ruled 2026-10-21 that it needs no in-app
+       notice either: he is still the only tester. -->
+  <!-- No in-app channel for this notice exists yet (ReversiRivals, 2026-10-21: an in-app news
+       feature is a next-queue item). Until it does, a material change after launch has no way to
+       reach players before it takes effect, which this page promises below. -->
   <!-- Ship gates for this text: ReversiRivals docs/store-data-safety.md, "Ship gates". -->
-  <p class="updated">Last updated: 12 October 2026</p>
+  <p class="updated">Last updated: 21 October 2026</p>
 
   <p>
     Beenetic Studios makes games for mobile devices. This policy explains what information those
@@ -107,6 +113,8 @@
     <li>A display name, an avatar, an optional one-line status, and a country, which you choose in
       the app. The country starts out pre-selected from your device's settings, and you can change
       it. Other players you are matched with can see these.</li>
+    <li>A report, if you report another player's name or status. See
+      <a href="#reports">Names, statuses and reports</a> below.</li>
     <li>Anything you write to us, if you send us an email.</li>
   </ul>
 
@@ -125,6 +133,9 @@
       moves of recent games, and, for online games, your opponent's name, avatar and account
       identifier. Also your win, loss and draw totals against the computer.</li>
     <li>Your invite code, which other players can enter to start a game with you.</li>
+    <li>The players you have blocked: each one's account identifier, the display name they had when
+      you blocked them, and when. Only you see this list, and a player is never told you blocked
+      them.</li>
     <li>For online games, a count of how many games you have finished against each opponent each
       day, which we use to detect abuse of rewards.</li>
     <li>Your in-app preferences, such as the theme, board and piece styles you have selected, and
@@ -186,6 +197,7 @@
     <li>To show your name, avatar, status, country, and record to opponents in a match.</li>
     <li>To show ads, and to record when you claim an ad reward so that it is paid once.</li>
     <li>To find and fix crashes and errors.</li>
+    <li>To keep offensive names and statuses out of the game, and to review reports about them.</li>
     <li>To answer your support messages and to investigate cheating, abuse, or technical faults.</li>
   </ul>
   <p>
@@ -272,6 +284,28 @@
     into the problem you reported.
   </p>
 
+  <h2 id="reports">Names, statuses and reports</h2>
+  <!-- Bad-word filter and Report Player (ReversiRivals DL-154 to DL-157, docs/plan-name-filter.md).
+       The check: WordFilter.cs on the device, wordfilter.js inside RR_SetProfile; refused text is
+       not stored and not logged. Reports: rrReport rows (reports.js), REPORTS_TTL_MS 90 days, read
+       only in the brainCloud portal; RR_AdminModerate writes the removed texts to the rows and to a
+       marker row (reporter "") so RR_SetProfile refuses them while the rows live; account-delete.js
+       deletes every row about the deleting player and every row they made. -->
+  <p>
+    Because other players can see your display name and status, the game checks both against a list
+    of offensive words, in the app and again on our backend, before they are saved. A name or status
+    that fails the check is not saved, and the check is done by us, without sending your text to
+    anyone else.
+  </p>
+  <p>
+    If you report another player's name or status as offensive, we keep a record of the report:
+    your account identifier, their account identifier, the name and status their profile showed at
+    the time, and when you reported it. We use it only to review the report and, where needed, to
+    change that player's name or remove their status. If we do, we keep the removed text with the
+    record so it cannot simply be set again. We never tell a player who reported them. Every report
+    is deleted automatically after 90 days, and straight away if either account is deleted.
+  </p>
+
   <h2>Who we share it with</h2>
   <p>
     We share information only with the service providers that make the games work, and only for that
@@ -287,7 +321,8 @@
           <td>bitHeads Inc. (brainCloud)</td>
           <td>Your account identifier, profile fields, invite code, progress, coins and owned items,
             game history, statistics, online match state, device language, country code and time
-            zone, and your notification token</td>
+            zone, your notification token, the players you have blocked, and reports you make or
+            that are made about you</td>
           <td>It is the backend that stores accounts, keeps progress, runs online play and sends
             notifications</td>
         </tr>
@@ -352,6 +387,8 @@
       result (see "Deleting your account and your data").</li>
     <li><strong>Notification records:</strong> the token for as long as notifications are on; the
       list of finished games only until you have been notified about them or have seen them.</li>
+    <li><strong>Player reports:</strong> 90 days, or until the account of either player is deleted,
+      whichever comes first.</li>
     <li><strong>Crash reports:</strong> 90 days, after which Firebase deletes them.</li>
     <li><strong>Support email, including Report a Problem files:</strong> for as long as it takes to
       resolve your question, and then for a reasonable period afterwards in case you write
@@ -405,7 +442,9 @@
     started, the game itself until it expires on our backend. Their own short-lived records can
     also hold your display name and account identifier for a while: the list of finished games
     waiting in their notifications (cleared once they are notified or catch up), and that day's
-    count of games played against each opponent.
+    count of games played against each opponent. If another player blocked you, their block list
+    keeps your account identifier and the display name you had then until they unblock you or
+    delete their own account.
   </p>
   <p>
     So that your opponents' games still record their result, deleting your account keeps a short
