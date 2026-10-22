@@ -6,15 +6,6 @@
 <title>Delete Your Account · Beenetic Studios</title>
 <meta name="description" content="How to delete your Beenetic Studios account and the data attached to it.">
 
-<!--
-  This is the web-accessible deletion route Google Play requires alongside the
-  in-app one. It has to be reachable WITHOUT installing the app, and the same
-  URL goes in the Play Console Data safety form. Do not move it.
-
-  It is deliberately an email route rather than a form: a form would need a
-  backend and would collect more than the email already does.
--->
-
 <style>
   :root {
     --bg: #ffffff;
@@ -114,18 +105,10 @@
     We complete verified requests within 30 days.
   </p>
 
-  <!--
-    Server authority shipped 2026-10-06, so progress, coins, owned items and game history are named
-    below rather than covered by "stored on the device". Keep this list in step with /privacy/.
-    Both routes run the same server routine (ReversiRivals docs/plan-account-deletion.md, DL-124:
-    RR_DeleteAccount in the app, RR_AdminDeleteAccount for email requests), which also removes the
-    unowned rrPlayer row a brainCloud user delete leaves behind. Published 2026-10-12 ahead of the
-    first store build (only internal testers have had a build, DL-130).
-  -->
   <h2>What gets deleted</h2>
   <ul>
-    <li>Your account and the identifier behind it, including the link to Google Play Games if you
-      made one.</li>
+    <li>Your account and the identifier behind it, including the link to Google Play Games if there
+      is one.</li>
     <li>Your display name, avatar, status, country, and invite code.</li>
     <li>Your progress, coins and owned items, your game history and statistics, and your
       notification token and notification record.</li>
@@ -134,8 +117,6 @@
     <li>The game's data on the device you delete from, apart from its diagnostic log files.</li>
   </ul>
 
-  <!-- Q-039 / D5 and D7 (2026-10-10): no scrub; the 30-day ended-game record. Keep in step with
-       /privacy/ ("What deletion cannot reach"), which names the code behind each item. -->
   <h2>What stays</h2>
   <ul>
     <li>Games you already played against another player remain in that player's own records,
