@@ -6,35 +6,37 @@
 <title>Privacy Policy · Beenetic Studios</title>
 <meta name="description" content="Privacy policy for Beenetic Studios games and websites.">
 
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
   :root {
-    --bg: #ffffff;
-    --surface: #f4f4f6;
-    --text: #16181d;
-    --muted: #5c626e;
-    --accent: #2f7ef0;
-    --border: #e2e4e9;
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --text: #1c1f26;
+    --muted: #545b69;
+    --accent: #9a7106;
+    --border: #e6e2d8;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #14161a;
-      --surface: #1d2026;
-      --text: #eceef2;
-      --muted: #9aa1ae;
-      --accent: #5a9dff;
-      --border: #2a2e36;
+      --bg: #14161e;
+      --surface: #1d2130;
+      --text: #eef1f6;
+      --muted: #a8b0be;
+      --accent: #f5b700;
+      --border: #2c3242;
     }
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body {
     margin: 0;
-    padding: 3rem 1.25rem 4rem;
+    padding: clamp(3rem, 9vw, 6rem) 1.25rem 4rem;
     background: var(--bg);
     color: var(--text);
     font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
-  main { max-width: 42rem; margin: 0 auto; }
+  main { max-width: 39rem; margin: 0 auto; }
   .back { display: inline-block; margin-bottom: 2rem; color: var(--accent); text-decoration: none; font-size: .9rem; }
   .back:hover { text-decoration: underline; }
   h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 .5rem; letter-spacing: -0.01em; }
@@ -64,10 +66,25 @@
     font-size: .85rem;
   }
   footer a { color: var(--accent); }
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: fit-content;
+    margin-bottom: 2.5rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .mark img { width: 36px; height: 36px; flex: none; display: block; }
+  .mark .name { font-size: 1.1rem; font-weight: 650; letter-spacing: -0.01em; }
 </style>
 </head>
 <body>
 <main>
+  <a class="mark" href="https://www.beeneticstudios.com/">
+    <img src="/logo-200.png" width="36" height="36" alt="">
+    <span class="name">Beenetic Studios</span>
+  </a>
   <a class="back" href="/">&larr; Legal</a>
 
   <h1>Privacy Policy</h1>
@@ -457,7 +474,8 @@
 
   <footer>
     &copy; 2026 Beenetic Studios ·
-    <a href="https://www.beeneticstudios.com/">beeneticstudios.com</a>
+    <a href="https://www.beeneticstudios.com/">beeneticstudios.com</a> ·
+    <a href="https://www.beeneticstudios.com/support/">Support</a>
   </footer>
 </main>
 </body>
