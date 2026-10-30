@@ -88,11 +88,12 @@
   <a class="back" href="/">&larr; Legal</a>
 
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 25 October 2026</p>
+  <p class="updated">Last updated: 29 October 2026</p>
 
   <p>
-    Beenetic Studios makes games for mobile devices. This policy explains what information those
-    games and this website collect, why, who else sees it, and how you can have it deleted. It
+    Beenetic Studios is an independent game studio that makes games with care, on whatever
+    platform suits them best. This policy explains what information those games and this website
+    collect, why, who else sees it, and how you can have it deleted. It
     applies to every Beenetic Studios app and site. Where a particular app does something specific,
     that is called out by name.
   </p>
@@ -120,9 +121,10 @@
   <h3>Information created by playing</h3>
   <ul>
     <li>Your account identifier. When you first play, the app creates an anonymous identifier for
-      your device. If your device is signed in to Google Play Games, the app links your Play Games
-      player identifier to that account automatically, so your progress survives a new device. You
-      can also sign in to Play Games from inside the app to link it.</li>
+      your device. If your device is signed in to Google Play Games on Android, or to Game Center on
+      iPhone, the app links your Play Games or Game Center player identifier to that account
+      automatically, so your progress survives a new device. You can also sign in from inside the
+      app to link it.</li>
     <li>Your online match record (wins, losses, draws) and the state of games you are currently
       playing online: the moves made, whose turn it is, and when each move happened.</li>
     <li>Your progress, kept with your account so it follows you to a new device: your coin balance
@@ -174,12 +176,13 @@
     <li>We do not use a third-party analytics SDK in our games. Our only advertising SDK is Google
       AdMob, which can use your device's advertising identifier as described in
       <a href="#advertising">Advertising</a> below; no other SDK in our games tracks you across
-      other companies' apps or websites. We do use Google's Firebase Crashlytics for crash reports,
-      described below. The Firebase libraries we use for
-      notifications and crash reports bring Google's analytics component with them; we switch its
-      data collection off and never call it. Google Play and Apple
-      give us aggregated crash and performance reports for our own apps as part of distributing
-      them, which we use to fix bugs.</li>
+      other companies' apps or websites. On Android, we use Google's Firebase Crashlytics for crash
+      reports, described below, and the Firebase libraries we use there for notifications and crash
+      reports bring Google's analytics component with them; we switch its data collection off and
+      never call it. Our iPhone apps contain no Firebase. Google Play and Apple give us aggregated
+      crash and performance reports for our own apps as part of distributing them (on iPhone, only
+      from players who choose to share analytics with app developers), which we use to fix
+      bugs.</li>
     <li>Our games contain no purchases, so we never see payment information.</li>
   </ul>
 
@@ -189,7 +192,9 @@
       the result.</li>
     <li>To keep your account and your progress attached to you across sessions and devices, and to
       award coins and items fairly.</li>
-    <li>To tell you, with one short notification, when an online game is waiting for you.</li>
+    <li>To tell you, with one short notification, when an online game is waiting for you, and, unless
+      you turn reminders off, to remind you before a daily puzzle streak ends or once after a few days
+      away.</li>
     <li>To show your name, avatar, status, country, and record to opponents in a match.</li>
     <li>To show ads, and to record when you claim an ad reward so that it is paid once.</li>
     <li>To find and fix crashes and errors.</li>
@@ -239,20 +244,30 @@
     time, as worked out from the time zone your device last reported.
   </p>
   <p>
+    It can also send two kinds of reminder: one in the evening when your daily puzzle streak will end
+    that night unless you solve the day's puzzle, and one if you have not opened the app for a few
+    days. You get at most one reminder each time you are away, never between 22:00 and 08:00, and a
+    reminder never takes the place of news about your games. To decide when one is due, our backend
+    uses the streak it already keeps with your account and when you were last in the app.
+  </p>
+  <p>
     To address a notification to your device, the app gets a notification token from
-    <strong>Google Firebase Cloud Messaging</strong> and stores it with your account on our backend.
+    <strong>Google Firebase Cloud Messaging</strong> on Android, or from <strong>Apple's Push
+    Notification service</strong> on iPhone, and stores it with your account on our backend.
     Our backend also keeps a short record of what is waiting for you (up to ten recently finished
     games, each with the opponent's name and account identifier), which games you have already
-    seen or been warned about, when you were last in the app, and when it last notified you. The
+    seen or been warned about, when you were last in the app, when it last notified or reminded you,
+    and whether you have turned reminders off. The
     list of finished games is cleared once you have been notified about them or have seen them. The notification itself carries a short message, such as an
     opponent's display name and that it is your move, plus identifiers the app uses to open the
-    right game, and is delivered by Google.
+    right game, and is delivered by Google or Apple.
   </p>
   <p>
     You can turn notifications off at any time in the app, under Settings, then Online, then Push
-    Notifications, or in your device's notification settings. Turning them off in the app deletes
-    the notification token, so nothing more can be sent to that device, and removes it from your
-    account.
+    Notifications, or in your device's notification settings. Turning them off in the app removes
+    the notification token from your account (on Android it also deletes the token), so nothing
+    more can be sent to that device. To stop only the reminders and keep news about your games, turn off Settings, then
+    Online, then Reminders.
   </p>
 
   <h2 id="crash-reports">Crash reports</h2>
@@ -266,8 +281,8 @@
     Settings, then Privacy, then Send Crash Reports.
   </p>
   <p>
-    If you choose Report a Problem in Settings, the app prepares a file and your device shares it
-    with us through the app you pick, usually email. The file holds your device model, operating
+    If you choose Report a Problem in Settings, the app prepares a file and you send it to us by
+    email, either from a message the app opens for you or through an app you pick. The file holds your device model, operating
     system, app version and account identifier, and the app's recent log, which can include your
     display name and the names and identifiers of players you have played. We use it only to look
     into the problem you reported.
@@ -328,13 +343,18 @@
             notifications</td>
         </tr>
         <tr>
-          <td>Google (Firebase Cloud Messaging)</td>
+          <td>Google (Firebase Cloud Messaging), on Android</td>
           <td>Your notification token, a Firebase installation identifier, and the text of each
             notification, if notifications are on</td>
           <td>To deliver notifications to your device</td>
         </tr>
         <tr>
-          <td>Google (Firebase Crashlytics)</td>
+          <td>Apple (Push Notification service), on iPhone</td>
+          <td>Your notification token and the text of each notification, if notifications are on</td>
+          <td>To deliver notifications to your device</td>
+        </tr>
+        <tr>
+          <td>Google (Firebase Crashlytics), on Android</td>
           <td>Crash and error reports: what went wrong, which screen was open, recent log lines with
             identifiers and names removed, device model, operating system, app version, and an
             installation identifier, if crash reports are on</td>
@@ -347,9 +367,15 @@
           <td>To select, deliver, and measure ads</td>
         </tr>
         <tr>
-          <td>Google (Play Games Services)</td>
+          <td>Google (Play Games Services), on Android</td>
           <td>Your Play Games player identifier, if your device is signed in to Play Games or you
             sign in from the app</td>
+          <td>To let your account follow you to a new device</td>
+        </tr>
+        <tr>
+          <td>Apple (Game Center), on iPhone</td>
+          <td>Your Game Center player identifier, with Apple's proof that it is yours, if your device
+            is signed in to Game Center or you sign in from the app</td>
           <td>To let your account follow you to a new device</td>
         </tr>
         <tr>
@@ -398,10 +424,13 @@
       ours.</li>
   </ul>
   <p>
-    An account that is never linked to Google Play Games exists only for the device that created
-    it. Uninstalling the app removes that device's copy of the identifier, which means the account
-    can no longer be reached, but it does not by itself delete the account. Use one of the routes
-    below if you want it gone.
+    An account that is never linked to Google Play Games or Game Center is reached only through the
+    identifier on the device that created it. On Android, the game's data is left out of device
+    backups and transfers, so the account stays on that device. On iPhone, a backup of the device
+    (to iCloud or a computer) includes the game's data, so restoring that backup, or setting up a
+    new iPhone from the old one, brings the account along. Uninstalling the app removes that
+    device's copy of the identifier, which means the account can no longer be reached from it, but
+    it does not by itself delete the account. Use one of the routes below if you want it gone.
   </p>
 
   <h2>Deleting your account and your data</h2>
